@@ -37,14 +37,22 @@ module.exports = {
             // 注意：连node_modules中的也一并解析
             {
                 test: /\.css$/,
-                loaders: 'css-loader'
+                loaders: ['style-loader','css-loader']
             },
             // 解析.less,先执行css-loader,再执行style-loader
             // 注意：连node_modules中的也一并解析(因为蚂蚁金服ui框架的样式文件就存在此目录下)
             // 如果没有用到less，就不用配（如果不配，蚂蚁金服ui框架的样式文件就要使用antd.css,而不要使用antd.less）
             {
                 test: /\.less$/,
-                loaders: ['style-loader','css-loader', 'less-loader']
+                loaders: ['style-loader','css-loader',
+                    {
+                        loader: "less-loader",
+                        options: {
+                            modifyVars: {
+                                "primary-color": "#1DA57A"
+                            }
+                        }
+                    }]
             },
             // 其他各类文件处理，打包后会把这些文件挪到打包好的文件夹中
             {
