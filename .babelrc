@@ -1,9 +1,6 @@
 {
-  "presets":  ["env","react"],
-  "plugins":  [["import", [
-                 {
-                     "libraryName": "antd",
-                     "style": true
-                 }
-               ]]]
+  "presets":  ["babel-preset-env","react"],
+  "plugins":  [
+    ["import", [{"libraryName": "antd", "style": true}]]
+  ]
 }
