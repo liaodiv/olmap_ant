@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Collapse, Icon} from 'antd';
 import '../../css/components/SideBar.css';
+
+import LayerManger from './LayerManager';
 const Panel = Collapse.Panel;
 
 class SideBar extends Component {
@@ -10,7 +12,7 @@ class SideBar extends Component {
         return (
             <Collapse className="sidebar" bordered={false}>
                 <Panel header="This is panel header 1" key="1">
-                    <p>write something here</p>
+                    <LayerManger/>
                 </Panel>
                 <Panel header="This is panel header 2" key="2">
                     <p>write something here</p>

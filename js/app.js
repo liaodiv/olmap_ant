@@ -16,7 +16,7 @@ const App = () =>(
               <Icon className="logo" type="api" />GIS-TEST-1
             </Header>
             <Layout style={{"height":"100%"}} >
-                <Sider className="sidebar" id="left" width="250">
+                <Sider className="sidebar" id="left" width="400">
                     <SideBar/>
                 </Sider>
                 <Content className="content-body">

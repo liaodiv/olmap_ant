@@ -1,10 +1,10 @@
 .sidebar {
     background-color: white;
 }
-.sidebar div{
+/*.sidebar div{
     border: none !important;
     border-radius: 0 !important;
-}
+}*/
 .sidebar div.ant-collapse-header {
     font-size: 14px;
     font-family: "Microsoft YaHei UI";
