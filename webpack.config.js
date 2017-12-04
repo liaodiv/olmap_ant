@@ -19,6 +19,7 @@ const config = {
         //publicPath  //按需加载需要的目录
 
     },
+    devtool : 'source-map',
     module: {
         //模块配置 使用Babel Turn ES2015 code in to es5
         rules: [ ///包含Rule的数组 Rule有三部分 condition result nested rule‘嵌套规则’
@@ -34,7 +35,8 @@ const config = {
             },
             {
                 test: /\.css$/,   //加载css
-                use: ['style-loader','css-loader'],    //内联打包css
+                use: ['style-loader','css-loader'],
+                //内联打包css
                 /* use: ExtractTextPlugin.extract({     //独立打包css
                      fallback:"style-loader",
                      use:"css-loader"

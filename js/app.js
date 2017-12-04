@@ -1,7 +1,9 @@
 import React from 'react';
-import { Layout , Button } from 'antd';
+import { Layout , Button,Icon } from 'antd';
 import SideBar from './components/SiderBar.jsx';
+import MapView from './containers/MapView.jsx';
 import '../css/containers/app.css';
+import '../node_modules/ol/ol.css';
 
 
 
@@ -10,15 +12,15 @@ const { Header , Footer ,Sider ,Content } = Layout;
 const App = () =>(
     <div style={ { "height":"100%" } }>
         <Layout style={{"height":"100%" }}>
-            <Header className="header" style={{ backgroundColor:'#92fffc'}}>
-              <h3>OL-ReactMap</h3>
+            <Header className="header" >
+              <Icon className="logo" type="api" />GIS-TEST-1
             </Header>
             <Layout style={{"height":"100%"}} >
-                <Sider className="Sider" id="left" width="300" style={{ backgroundColor:'#eeffcb'}}>
+                <Sider className="sidebar" id="left" width="250">
                     <SideBar/>
                 </Sider>
                 <Content className="content-body">
-                    <Button type="primary">Primary</Button>
+                    <MapView />
                 </Content>
             </Layout>
         </Layout>
