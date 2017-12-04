@@ -8,12 +8,12 @@ import '../css/containers/app.css';
 const { Header , Footer ,Sider ,Content } = Layout;
 
 const App = () =>(
-    <div>
-        <Layout>
+    <div style={ { "height":"100%" } }>
+        <Layout style={{"height":"100%" }}>
             <Header className="header" style={{ backgroundColor:'#92fffc'}}>
               <h3>OL-ReactMap</h3>
             </Header>
-            <Layout>
+            <Layout style={{"height":"100%"}} >
                 <Sider className="Sider" id="left" width="300" style={{ backgroundColor:'#eeffcb'}}>
                     <SideBar/>
                 </Sider>
