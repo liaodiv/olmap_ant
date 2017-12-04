@@ -1,6 +1,6 @@
 import React from 'react';
-import { Layout , Menu , Button } from 'antd';
-const { SubMenu } = Menu;
+import { Layout , Button } from 'antd';
+import SideBar from './components/SiderBar.jsx';
 import '../css/containers/app.css';
 
 
@@ -15,14 +15,15 @@ const App = () =>(
             </Header>
             <Layout>
                 <Sider className="Sider" id="left" width="300" style={{ backgroundColor:'#eeffcb'}}>
-                   23232sdsd</Sider>
-                <Content className="Content">Content1123232
+                    <SideBar/>
+                </Sider>
+                <Content className="content-body">
                     <Button type="primary">Primary</Button>
                 </Content>
             </Layout>
         </Layout>
 
     </div>
-)
+);
 
 export default App;
