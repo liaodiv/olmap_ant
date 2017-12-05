@@ -21,3 +21,6 @@
     font-size: 14px !important;
     line-height: 46px !important;
 }
+.sidebar {
+    overflow: auto;
+}

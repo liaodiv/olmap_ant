@@ -4,11 +4,12 @@ import React from 'react';
 import {Form, Select , Button  } from 'antd';
 
 const FormItem = Form.Item;
+const  Option = Select.Option;
 
 class layerM extends React.Component{
     componentDidMount() {
         // To disabled submit button at the beginning.
-        this.props.form.validateFields();
+        //this.props.form.validateFields();
     }
     handleSubmit (e) {
         e.preventDefault();
@@ -21,27 +22,21 @@ class layerM extends React.Component{
     render(){
         return (
         <Form layout="inline" onSubmit = { this.handleSubmit }>
-            <FormItem>
+            <Form.Item>
                 <Select style={{width:200}}>
                     <Option value="task">task1</Option>
                     <Option value="task1">task1</Option>
                     <Option value="task2">task3</Option>
 
                 </Select>
-            </FormItem>
-            <FormItem>
-                <Button type="primary" htmlType={submit}>添加图层</Button>
-            </FormItem>
+            </Form.Item>
+            <Form.Item>
+                <Button type="primary" htmlType="submit">添加图层</Button>
+            </Form.Item>
 
         </Form>
         )
     }
 }
 
-  {/*
-    <div>
-
-
-    </div>
-)*/}
 export default layerM;
