@@ -27,3 +27,15 @@ html,body {
     margin-right: 10px;
     font-weight: normal;
 }
+
+.leaflet-container {
+    height: 100%;
+    width: 100%;
+}
+.leaflet-layer{
+    height: 100%;
+}
+
+.leaflet-title-container {
+    height: 100%;
+}

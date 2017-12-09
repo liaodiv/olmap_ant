@@ -1,31 +1,36 @@
 import React, {Component} from 'react';
-import Map from 'ol/Map';
-import View from 'ol/View';
-import Tile from 'ol/layer/Tile';
-import OSM from 'ol/source/OSM';
+import '../../css/containers/leaflet.css';
+import Leaflet from 'leaflet';
+import {Map, Marker, Popup, TileLayer} from 'react-leaflet';
+
+Leaflet.Icon.Default.imagePath =           ///解决加载图片途径问题
+    '//cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/images/';
 class MapView extends Component {
     constructor() {
         super();
-        this.map = null;
-        this.view = null;
+
     }
+
     render() {
-        return (<div id="map"></div>);
+        const position = [51.505, -0.09]
+        return (
+            <Map center={position} zoom={13}>
+                <TileLayer
+                    url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+                    attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                />
+                <Marker position={position}>
+                    <Popup>
+                        <span>
+                         A pretty CSS3 popup.<br/>Easily customizable.
+                          </span>
+                    </Popup>
+                </Marker>
+            </Map>
+        )
     }
-    componentDidMount() {
-        this.view = new View({
-            center: [0, 0],
-            zoom: 2
-        });
-        this.map = new Map({
-            layers: [
-                new Tile({
-                    source: new OSM()
-                })
-            ],
-            target: 'map',
-            view: this.view
-        });
-    }
+
+
 }
+
 export default MapView;
