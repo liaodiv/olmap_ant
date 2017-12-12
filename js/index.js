@@ -13,7 +13,7 @@ import App from './app';
 
 
 ReactDOM.render(
-    <Provider store={createStoreWithMiddleware(reducers)}>
+    <Provider store = {createStoreWithMiddleware(reducers)}>
         <App/>
     </Provider>, document.querySelector('.content')
 )

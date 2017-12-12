@@ -1,5 +1,6 @@
 import  React from 'react';
 import { List , Switch } from 'antd';
+import {connect} from 'react-redux';
 
 const  data = ['layer1','layer2','layer3'];
 const LayerList = (props) => {
@@ -15,5 +16,9 @@ const LayerList = (props) => {
     )
 
 }
+function mapStateToProps(state) {
+    console.log('获取state',state);
 
-export default LayerList;
+    return {}; //=== {weather:weather}
+}
+export default connect(mapStateToProps)(LayerList);
