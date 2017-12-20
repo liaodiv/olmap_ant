@@ -14,11 +14,6 @@ class layerM extends React.Component{
         super(props);
 
     }
- /*   componentDidMount() {
-        // To disabled submit button at the beginning.
-        //this.props.form.validateFields();
-    }*/
-
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
@@ -32,7 +27,7 @@ class layerM extends React.Component{
         const { getFieldDecorator } = this.props.form;
 
         return (
-        <Form layout="inline" onSubmit = { this.handleSubmit }>
+        <Form layout="inline" onSubmit = { this.handleSubmit } >
             <Form.Item>
                 {getFieldDecorator('select',{
                   rules:[

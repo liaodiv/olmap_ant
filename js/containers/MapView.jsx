@@ -8,6 +8,8 @@ import Control from 'ol/control';
 import Scale from 'ol/control/scaleline';
 import MouseP from 'ol/control/mouseposition';
 import Coordinate from 'ol/coordinate';
+import Group from 'ol/layer/group';
+import layerGroup from './LayerGroup';
 class MapView extends Component {
     constructor() {
         super();
@@ -25,9 +27,13 @@ class MapView extends Component {
         });
         window.map = new Map({
             layers: [
-                new Tile({
-                    source: new OSM()
-                })
+                new Group({
+                    'title':'Base maps',
+                    layers:[new Tile({
+                        source: new OSM()
+                    })]
+                }),
+                layerGroup.Layers
             ],
             loadTilesWhileAnimating: true,
             target: 'map',

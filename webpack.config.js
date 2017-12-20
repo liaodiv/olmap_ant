@@ -70,6 +70,7 @@ const config = {
         open:true
         //必须和output中的路径相同
     },
+    devtool:"source-map",
     plugins: [
         //new ExtractTextPlugin("styles.css")
     ]

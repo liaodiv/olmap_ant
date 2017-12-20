@@ -1,24 +1,44 @@
 import React, {Component} from 'react';
-import {Collapse, Icon} from 'antd';
+import { Collapse, Icon,Layout} from 'antd';
+import { Route, Switch } from 'react-router-dom';
 import '../../css/components/SideBar.css';
 
+import LayerNav from './LayerNav'
 import LayerManger from './LayerManager';
 import LayerList from './LayerList';
+import LayerSelect from './layerSelect';
 const Panel = Collapse.Panel;
+
+const { Content } = Layout;
+
+const TestContent = ()=>{
+    return (
+        <div>null index</div>
+    )
+}
 
 class SideBar extends Component {
 
     render() {
-
         return (
+            <Content style={{margin:'4px 4px'}}>
+                <Switch>
+                    <Route path="/layers" component={LayerNav}/>
+                    <Route path="/" component={TestContent}/>
+
+                </Switch>
+            </Content>
+        )
+
+/*        return (
             <Collapse className="sidebar" bordered={false}>
                 <Panel header="图层管理工具" key="1">
                     <LayerManger/>
                     <br/>
                     <LayerList/>
                 </Panel>
-                <Panel header="This is panel header 2" key="2">
-                    <p>write something here</p>
+                <Panel header="查询工具" key="2">
+                    <LayerSelect/>
                 </Panel>
                 <Panel header="This is panel header 3" key="3">
                     <p>write something here</p>
@@ -36,7 +56,7 @@ class SideBar extends Component {
                     <p>write something here</p>
                 </Panel>
             </Collapse>
-        )
+        )*/
 
     }
 
